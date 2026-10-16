@@ -1,0 +1,1229 @@
+.journey {
+  overflow: hidden;
+  background: #091216;
+  color: #f2f0e7;
+  font-family: "Manrope Variable", "Noto Sans SC", sans-serif;
+}
+.journey-world {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4000px;
+  height: 1800px;
+  transform-origin: 0 0;
+}
+.journey-world-light {
+  position: absolute;
+  width: 1900px;
+  height: 1550px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.source-light {
+  left: -290px;
+  top: -65px;
+  background: radial-gradient(
+    ellipse,
+    #42878724 0%,
+    #42878708 45%,
+    transparent 68%
+  );
+}
+.entity-light {
+  left: 1000px;
+  top: 5px;
+  background: radial-gradient(
+    ellipse,
+    #a2ca7f33 0%,
+    #7eb07310 40%,
+    transparent 67%
+  );
+}
+.wiki-light {
+  left: 1900px;
+  top: -50px;
+  background: radial-gradient(
+    ellipse,
+    #b498d640 0%,
+    #a385c619 42%,
+    transparent 69%
+  );
+}
+.journey-world-grid,
+.journey-lines {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.journey-lines {
+  z-index: 8;
+}
+.journey-source {
+  position: absolute;
+  width: 570px;
+  height: 320px;
+  padding: 27px 34px 22px;
+  border-radius: 6px;
+  color: #314a4b;
+  background: linear-gradient(135deg, #f5f2e7, #e6eadd 63%, #cdd9ce);
+  border: 1px solid #f1f4e8;
+  box-shadow:
+    0 3px 0 #a7bdb2,
+    0 6px 0 #627a73,
+    0 10px 0 #283e3f,
+    0 37px 60px #00000045;
+  transform-origin: center center;
+  overflow: hidden;
+}
+.journey-source-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: linear-gradient(#9ddcdb, #5e9c99);
+}
+.journey-source-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #7d9892;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+.journey-id {
+  color: #388b8e;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.journey-page-icon {
+  display: block;
+  width: 9px;
+  height: 12px;
+  border: 1px solid #7b9690;
+  margin-left: auto;
+}
+.journey-source-section {
+  margin-top: 22px;
+  font-size: 14px;
+  color: #708780;
+}
+.journey-source-main {
+  font-size: 27px;
+  line-height: 1.7;
+  color: #314b46;
+  margin: 8px 0 12px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+.journey-highlight {
+  padding: 1px 4px;
+  margin-left: -4px;
+  border-radius: 3px;
+}
+.journey-source-detail {
+  margin: 0;
+  color: #72857c;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.journey-source-bottom {
+  position: absolute;
+  bottom: 22px;
+  left: 34px;
+  right: 34px;
+  border-top: 1px solid #becfc2;
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: #869d90;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+.journey-scanner {
+  position: absolute;
+  height: 1px;
+  left: 17px;
+  right: 17px;
+  background: #60c7c8;
+  box-shadow: 0 0 12px 4px #65d9cd40;
+  pointer-events: none;
+}
+.journey-token {
+  z-index: 24;
+  position: absolute;
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 36px;
+  white-space: nowrap;
+  font-family: "Manrope Variable", "Noto Sans SC", sans-serif;
+  font-weight: 500;
+  transform-origin: center;
+}
+.journey-token-dot {
+  display: inline-block;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #c4eeb9;
+  box-shadow: 0 0 9px #bbe9b66b;
+}
+.journey-core-anchor {
+  position: absolute;
+  z-index: 21;
+}
+.journey-core {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 28% 12%, #deefb82d, transparent 46%),
+    radial-gradient(ellipse at 73% 86%, #a6d2892c, transparent 58%),
+    linear-gradient(137deg, #3e6140f5, #193423fc 58%, #3b6041f7);
+  border: 1px solid #d9edb89e;
+  box-shadow:
+    inset 0 0 0 5px #0e221650,
+    inset 0 0 0 7px #cee8ae20,
+    inset 0 -15px 35px #bcd99a1c,
+    0 40px 70px #0000004d,
+    0 0 120px #a8d88c10;
+  overflow: hidden;
+}
+.journey-core-rim {
+  position: absolute;
+  inset: 16px;
+  border: 1px solid #c5e0ae25;
+  border-radius: 50%;
+}
+.journey-core-reflection {
+  position: absolute;
+  width: 430px;
+  height: 204px;
+  left: -25px;
+  top: -97px;
+  border-bottom: 3px solid #dceeb98a;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+.journey-core-glyph {
+  position: absolute;
+  top: 50px;
+  left: 162px;
+}
+.journey-core-category {
+  position: absolute;
+  top: 139px;
+  width: 100%;
+  text-align: center;
+  color: #b5cba1;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+}
+.journey-core-proof {
+  position: absolute;
+  bottom: 78px;
+  width: 100%;
+  text-align: center;
+  color: #aabe9c;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.journey-core-proof > span {
+  font-size: 26px;
+  color: #ddecc6;
+  margin-right: 6px;
+}
+.journey-core-qualification {
+  position: absolute;
+  bottom: 37px;
+  width: 100%;
+  text-align: center;
+  color: #d2e9bd;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.journey-core-qualification > span {
+  margin-right: 6px;
+}
+.journey-core-footnote {
+  position: absolute;
+  left: -200px;
+  top: 239px;
+  width: 400px;
+  text-align: center;
+  color: #91ae8a;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.journey-qualification-ring {
+  position: absolute;
+  left: -211px;
+  top: -211px;
+}
+.journey-merge-wave {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 1px solid #bfdba885;
+  box-shadow:
+    0 0 28px #cee7a31a,
+    inset 0 0 30px #bad99b12;
+}
+.journey-orbit {
+  position: absolute;
+  width: 860px;
+  height: 860px;
+  border: 1px solid #c2dfac59;
+  border-radius: 50%;
+}
+.journey-wiki-anchor {
+  position: absolute;
+  width: 760px;
+  height: 910px;
+  z-index: 22;
+  transform-style: preserve-3d;
+}
+.journey-wiki-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 5px;
+  background: #8a8995;
+  border: 1px solid #cecad8;
+}
+.journey-wiki-page {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: linear-gradient(132deg, #f5f2eb, #ebe9e7 60%, #ddd8e5);
+  border: 1px solid #f6f2eb;
+  box-shadow:
+    0 4px 0 #bcb8c5,
+    0 7px 0 #666274,
+    0 36px 85px #0000005c;
+  color: #413b50;
+  padding: 38px 54px 33px;
+  overflow: hidden;
+}
+.journey-wiki-edge {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(#c6abd9, #9582af);
+}
+.journey-wiki-header {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  border-bottom: 1px solid #d3cdda;
+  padding-bottom: 17px;
+}
+.journey-wiki-monogram {
+  font-family: Georgia, serif;
+  font-size: 47px;
+  line-height: 1;
+}
+.journey-wiki-monogram > span {
+  color: #aa85c0;
+}
+.journey-wiki-header > span:nth-child(2) {
+  color: #a09aaa;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+.journey-wiki-spark {
+  margin-left: auto;
+  color: #ad92c8;
+  font-size: 28px;
+}
+.journey-wiki-taxonomy {
+  margin-top: 27px;
+  font-size: 13px;
+  color: #a091ae;
+  letter-spacing: 1px;
+}
+.journey-wiki-title {
+  margin-top: 18px;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 69px;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -2px;
+  color: #383447;
+}
+.journey-wiki-english {
+  margin-top: 8px;
+  font-size: 21px;
+  color: #a092b0;
+  letter-spacing: 1px;
+}
+.journey-wiki-intro {
+  margin-top: 36px;
+  font-size: 28px;
+  line-height: 1.75;
+  color: #6c617a;
+  letter-spacing: 0.4px;
+}
+.journey-wiki-short-rule {
+  height: 2px;
+  margin-top: 28px;
+  margin-bottom: 24px;
+  background: #b593cb;
+}
+.journey-wiki-article {
+  display: flex;
+  gap: 22px;
+  margin-top: 24px;
+}
+.journey-wiki-article > b {
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #a398b0;
+  padding-top: 4px;
+}
+.journey-wiki-article strong {
+  font-size: 21px;
+  font-weight: 500;
+  color: #60536f;
+}
+.journey-wiki-article p {
+  font-size: 16px;
+  color: #8e8298;
+  line-height: 1.8;
+  margin: 10px 0 0;
+}
+.journey-wiki-article sup {
+  margin-left: 5px;
+  color: #a186b6;
+  font-size: 10px;
+}
+.journey-wiki-sources {
+  margin-top: 31px;
+  padding-top: 18px;
+  border-top: 1px solid #d3cdda;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #998ba7;
+  font-size: 12px;
+}
+.journey-wiki-sources > div {
+  display: flex;
+  gap: 10px;
+}
+.journey-wiki-sources > div > span {
+  border: 1px solid #d3c9de;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 11px;
+}
+.journey-wiki-bottom {
+  position: absolute;
+  bottom: 31px;
+  left: 54px;
+  right: 54px;
+  display: flex;
+  justify-content: space-between;
+  color: #aaa0b2;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.journey-world-label {
+  position: absolute;
+  font-size: 15px;
+  color: #b0c3b4;
+  letter-spacing: 1px;
+}
+.journey-world-label > span {
+  margin-left: 19px;
+  color: #749082;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+}
+.journey-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 47%, transparent 48%, #03090d42 100%),
+    linear-gradient(
+      0deg,
+      #070e1499,
+      transparent 15%,
+      transparent 89%,
+      #070e1440
+    );
+}
+.journey-hud {
+  position: absolute;
+  top: 43px;
+  left: 62px;
+  right: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #d6e0d7;
+}
+.journey-brand {
+  font-size: 21px;
+  font-weight: 550;
+  letter-spacing: -0.4px;
+}
+.journey-brand > i {
+  color: #7c928a;
+  margin: 0 7px;
+  font-style: normal;
+  font-weight: 350;
+}
+.journey-hud-right {
+  color: #79928b;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.journey-captions {
+  position: absolute;
+  bottom: 104px;
+  left: 100px;
+  right: 100px;
+  height: 44px;
+  text-align: center;
+  font-size: 25px;
+  color: #d6dfd7;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  text-shadow:
+    0 2px 15px #091216,
+    0 0 40px #091216;
+}
+.journey-captions > div {
+  position: absolute;
+  inset: 0;
+}
+.journey-corner-note {
+  position: absolute;
+  right: 64px;
+  bottom: 40px;
+  font-size: 11px;
+  color: #648076;
+  letter-spacing: 1px;
+}
+.journey-timeline {
+  position: absolute;
+  left: 63px;
+  bottom: 45px;
+  width: 132px;
+  height: 1px;
+  background: #5c807038;
+}
+.journey-timeline > span {
+  height: 1px;
+  display: block;
+  background: #b1caa4;
+}
+
+.origin-sheet {
+  position: absolute;
+  width: 620px;
+  height: 820px;
+  z-index: 2;
+  transform-origin: center center;
+}
+.origin-sheet-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: #5f6d72;
+  border: 1px solid #95a3a2;
+  opacity: 0.75;
+  transform: translate(9px, 11px) rotate(1.1deg);
+}
+.origin-sheet-paper {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: linear-gradient(132deg, #f2efe6, #e4e8de 62%, #ccd8d0);
+  border: 1px solid #f4f1e8;
+  box-shadow:
+    0 3px 0 #a4b6ac,
+    0 6px 0 #4e6462,
+    0 30px 60px #00000052;
+  color: #31484a;
+  padding: 31px 35px;
+  overflow: hidden;
+}
+.origin-sheet-file-layer,
+.origin-sheet-md-layer {
+  position: absolute;
+  inset: 0;
+  padding: 31px 35px;
+}
+.origin-sheet-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #7a938d;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+}
+.origin-file-chip,
+.origin-md-chip {
+  border: 1px solid #7d9a94;
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  color: #4c817e;
+}
+.origin-md-chip {
+  border-color: #6f97a8;
+  color: #3b7d92;
+}
+.origin-page-no {
+  margin-left: auto;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+.origin-file-title {
+  margin-top: 33px;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 37px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.origin-file-sub {
+  margin-top: 8px;
+  color: #86a09a;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+}
+.origin-hairline {
+  height: 1px;
+  background: #b9cbc0;
+  margin: 22px 0 4px;
+}
+.origin-file-section {
+  display: flex;
+  gap: 17px;
+  margin-top: 24px;
+  font-size: 16px;
+  color: #3d5b58;
+}
+.origin-file-section > span {
+  color: #59979a;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 11px;
+  padding-top: 5px;
+}
+.origin-file-section > strong {
+  font-weight: 500;
+}
+.origin-file-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 26px;
+}
+.origin-file-lines > i {
+  height: 4px;
+  border-radius: 2px;
+  background: #9db2ac;
+  opacity: 0.65;
+}
+.origin-sheet-bottom {
+  position: absolute;
+  left: 35px;
+  right: 35px;
+  bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  color: #82968e;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+}
+.origin-md-section {
+  display: flex;
+  gap: 17px;
+  margin-top: 30px;
+}
+.origin-md-mark {
+  width: 25px;
+  flex-shrink: 0;
+  color: #3b8296;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  padding-top: 2px;
+}
+.origin-md-section strong {
+  display: block;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  color: #2f4c55;
+}
+.origin-md-section p {
+  margin: 9px 0 0;
+  color: #6f8a8c;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.origin-md-table {
+  position: absolute;
+  left: 35px;
+  right: 35px;
+  bottom: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #52818c;
+  font-family: "Manrope Variable", monospace;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  border-top: 1px solid #a9c2bd;
+  padding-top: 14px;
+}
+.origin-sheet-scan {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: #5fd4d1;
+  box-shadow: 0 0 18px 5px #5fd4d142;
+  pointer-events: none;
+}
+.origin-slice-band {
+  position: absolute;
+  left: 27px;
+  right: 27px;
+  height: 118px;
+  border: 1px solid #65c8cc8c;
+  border-radius: 4px;
+  background: linear-gradient(120deg, #7bd6d71f, #7bd6d705);
+  transform-origin: left center;
+  pointer-events: none;
+}
+.origin-sheet-tag {
+  position: absolute;
+  left: 2px;
+  top: -37px;
+  font-family: "Manrope Variable", sans-serif;
+  color: #78c7c6;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+}
+.origin-minor-chunk {
+  position: absolute;
+  z-index: 9;
+  width: 330px;
+  min-height: 104px;
+  padding: 17px 19px;
+  border-radius: 5px;
+  background: linear-gradient(130deg, #ecefe5, #d5ded4);
+  border: 1px solid #f0f3e9;
+  box-shadow:
+    0 2px 0 #9caea2,
+    0 16px 30px #0000003d;
+  color: #3d5551;
+}
+.origin-minor-chunk > strong {
+  display: block;
+  margin-top: 9px;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+.origin-minor-chunk > p {
+  margin: 7px 0 0;
+  color: #6c837c;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.back-lanes {
+  position: absolute;
+  inset: 0;
+  width: 6400px;
+  height: 1800px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 10;
+}
+.back-question {
+  position: absolute;
+  z-index: 15;
+  width: 660px;
+  padding: 27px 33px 31px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #22323c, #16242d);
+  border: 1px solid #4d6570;
+  box-shadow: 0 26px 55px #00000052;
+  color: #dfe8e3;
+}
+.back-question-top {
+  display: flex;
+  justify-content: space-between;
+  color: #8fa8ab;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+}
+.back-question-text {
+  position: relative;
+  margin-top: 19px;
+  min-height: 108px;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 30px;
+  line-height: 1.75;
+  color: #eef3ea;
+}
+.back-question-text > span {
+  display: block;
+}
+.back-question-rewrite {
+  position: absolute;
+  inset: 0;
+  color: #d5e8c4;
+}
+.back-chip {
+  position: absolute;
+  z-index: 16;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 22px;
+  border-radius: 28px;
+  border: 1px solid #6a8b8a;
+  background: #17262b;
+  color: #cfe3dc;
+  font-size: 16px;
+  white-space: nowrap;
+  box-shadow: 0 14px 30px #00000045;
+}
+.back-chip code {
+  font-family: "Manrope Variable", monospace;
+  font-size: 13px;
+  color: #8fc7c6;
+  letter-spacing: 0.4px;
+}
+.back-chip-green {
+  border-color: #7fa471;
+  background: #1a2a20;
+  color: #d7e8c8;
+}
+.back-chip-green code {
+  color: #a9cf95;
+}
+.back-chip-violet {
+  border-color: #8a7bb0;
+  background: #221d31;
+  color: #ddd2ef;
+}
+.back-chip-violet code {
+  color: #b9a4e2;
+}
+.back-chip-warn {
+  border-color: #b09a62;
+  background: #2c2718;
+  color: #ecdda9;
+}
+.back-hub {
+  position: absolute;
+  z-index: 15;
+  width: 22px;
+  height: 22px;
+  margin: -11px;
+  border-radius: 50%;
+  background: #d9efe4;
+  box-shadow:
+    0 0 0 9px #78deec2e,
+    0 0 34px #78deec7a;
+}
+.back-hub > span {
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: #f2fbf6;
+}
+.back-lane-tags {
+  position: absolute;
+  inset: 0;
+  z-index: 14;
+}
+.back-lane-tags > span {
+  position: absolute;
+  color: #8fa89b;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.6px;
+}
+.back-answer {
+  position: absolute;
+  z-index: 15;
+  width: 640px;
+  min-height: 550px;
+  padding: 28px 34px;
+  border-radius: 8px;
+  background: linear-gradient(140deg, #f2efe8, #e7e6e0 60%, #dcd6e4);
+  color: #413c4e;
+  box-shadow:
+    0 4px 0 #b4b0be,
+    0 7px 0 #625e70,
+    0 34px 75px #00000066;
+}
+.back-answer-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d2cddb;
+  padding-bottom: 15px;
+  color: #9b92a8;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+}
+.back-answer p {
+  position: relative;
+  margin: 27px 0 0;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 22px;
+  line-height: 1.95;
+  color: #5b5269;
+}
+.back-answer sup {
+  color: #9c74c3;
+  font-size: 12px;
+  margin-left: 4px;
+}
+.back-answer-sources {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid #d2cddb;
+  color: #8d8399;
+  font-size: 13px;
+}
+.back-answer-sources > div {
+  display: flex;
+  gap: 11px;
+}
+.back-answer-sources b {
+  border: 1px solid #d6cbe2;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #917ba6;
+}
+.back-answer-warning {
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 26px;
+  padding: 11px 15px;
+  border-radius: 5px;
+  background: #c99b5d26;
+  border: 1px solid #c99b5d7a;
+  color: #8b6a37;
+  font-size: 14px;
+  text-align: center;
+}
+.back-edit-band {
+  position: absolute;
+  z-index: 15;
+  width: 520px;
+  height: 320px;
+}
+.back-edit-caret {
+  position: absolute;
+  left: 232px;
+  top: 33px;
+  width: 3px;
+  height: 58px;
+  background: #79d3d0;
+  box-shadow: 0 0 16px #79d3d08c;
+}
+.back-edit-line {
+  position: absolute;
+  left: 232px;
+  top: 88px;
+  width: 305px;
+  height: 3px;
+  background: linear-gradient(90deg, #79d3d0, #79d3d000);
+}
+.back-core-refresh {
+  position: absolute;
+  z-index: 23;
+  width: 0;
+  height: 0;
+}
+.back-core-refresh > span {
+  position: absolute;
+  left: -110px;
+  top: 235px;
+  width: 220px;
+  text-align: center;
+  color: #d3e7c2;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+.back-refresh-ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  border: 1px solid #cfe8ac;
+  box-shadow:
+    0 0 40px #cfe8ac3d,
+    inset 0 0 40px #cfe8ac24;
+}
+.back-wiki-refresh {
+  position: absolute;
+  z-index: 24;
+  width: 760px;
+  height: 910px;
+  pointer-events: none;
+}
+.back-wiki-wipe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #b79bdb;
+  box-shadow: 0 0 22px 7px #b79bdb59;
+}
+.back-wiki-refresh > span {
+  position: absolute;
+  left: 0;
+  bottom: -47px;
+  color: #c4b2dd;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+}
+
+.query-user,
+.query-pet {
+  position: absolute;
+  z-index: 18;
+}
+.query-userbox,
+.query-harnessbox {
+  position: absolute;
+  z-index: 19;
+  background: linear-gradient(140deg, #1d2c33, #14212a);
+  border: 1px solid #54707a;
+  box-shadow: 0 30px 70px #00000066;
+  color: #dfe8e3;
+  transform-origin: center bottom;
+}
+.query-userbox {
+  border-radius: 75px;
+  overflow: hidden;
+}
+.query-harnessbox {
+  overflow: visible;
+}
+.query-box-tail {
+  position: absolute;
+  left: 84px;
+  bottom: -22px;
+  width: 44px;
+  height: 26px;
+  background: #18262e;
+  border-right: 1px solid #54707a;
+  border-bottom: 1px solid #54707a;
+  transform: skewX(30deg);
+  border-radius: 0 0 8px 0;
+}
+.query-box-tail-right {
+  left: auto;
+  right: 84px;
+  transform: skewX(-30deg);
+}
+.query-region {
+  position: absolute;
+  border-radius: 30px;
+  padding: 20px 24px;
+  transform-origin: center;
+  overflow: hidden;
+}
+.query-region-0 {
+  background: linear-gradient(150deg, #a9e0ea, #7fc3d4);
+  border: 1px solid #c8edf4;
+  color: #16414c;
+  box-shadow: 0 14px 30px #78deec26;
+}
+.query-region-1 {
+  background: linear-gradient(150deg, #bfe6ac, #96c684);
+  border: 1px solid #dcf2cd;
+  color: #22411d;
+  box-shadow: 0 14px 30px #afe1a726;
+}
+.query-region-2 {
+  background: linear-gradient(150deg, #d2bdf2, #ab92dc);
+  border: 1px solid #eadff9;
+  color: #322050;
+  box-shadow: 0 14px 30px #c0a8f226;
+}
+.query-region-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.query-region-top > i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.65;
+}
+.query-region-top > span {
+  font-family: "Manrope Variable", "Noto Sans SC", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  opacity: 0.82;
+}
+.query-quote {
+  position: absolute;
+  left: 18px;
+  top: 34px;
+  font-family: Georgia, serif;
+  font-size: 74px;
+  line-height: 1;
+  opacity: 0.22;
+}
+.query-region > p {
+  position: relative;
+  margin: 22px 0 0;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  color: inherit;
+}
+.query-region-ornament {
+  position: absolute;
+  right: 22px;
+  bottom: 16px;
+  font-size: 13px;
+  opacity: 0.42;
+}
+.query-contract-frame {
+  position: absolute;
+  border: 2px solid #9fd2d3;
+  pointer-events: none;
+  box-shadow: 0 0 22px 3px currentColor;
+}
+.query-blur-clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.query-blur {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  justify-content: center;
+  padding: 0 32px;
+  filter: blur(8px);
+}
+.query-blur > i {
+  flex-shrink: 0;
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6e8a91, #48626c);
+}
+.query-blur-harness {
+  padding-top: 0;
+}
+.query-think-badge {
+  position: absolute;
+  left: 36px;
+  top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 13px;
+  background: #22343c;
+  border: 1px solid #5c7680;
+}
+.query-think-badge > i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #9fc4c9;
+}
+.query-tool {
+  position: absolute;
+  z-index: 17;
+  width: 350px;
+  padding: 19px 24px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #1c2b31, #14212a);
+  border: 1px solid #55707a;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  box-shadow: 0 20px 44px #00000052;
+}
+.query-tool-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.query-tool-dot.query-tag-0 {
+  background: #78deec;
+  box-shadow: 0 0 14px #78deec8c;
+}
+.query-tool-dot.query-tag-1 {
+  background: #afe1a7;
+  box-shadow: 0 0 14px #afe1a78c;
+}
+.query-tool-dot.query-tag-2 {
+  background: #c0a8f2;
+  box-shadow: 0 0 14px #c0a8f28c;
+}
+.query-tool strong {
+  display: block;
+  font-family: "Noto Sans SC", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #e7eee6;
+}
+.query-tool code {
+  font-family: "Manrope Variable", monospace;
+  font-size: 12px;
+  color: #87a6ac;
+  letter-spacing: 0.6px;
+}
+.query-threads {
+  position: absolute;
+  inset: 0;
+  width: 6400px;
+  height: 1800px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 16;
+}
