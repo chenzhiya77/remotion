@@ -1,0 +1,541 @@
+/* 开场（9s）：支持双色调（1. parchment 破晓羊皮纸手稿原野 / 2. dusk 暮色星图原野）+ 三层视差知识原野 + 高处左鸭右流式问答 + 游标俯冲引路光轨。 */
+.op {
+  overflow: hidden;
+  background: #091216;
+  font-family: "Manrope Variable", "Noto Sans SC", sans-serif;
+}
+
+/* ── 色调 1：破晓羊皮纸手稿原野（parchment，默认推荐） ── */
+.op-theme-parchment {
+  --op-sheet-bg:
+    radial-gradient(ellipse at 36% 24%, rgba(255, 249, 235, 0.78) 0%, transparent 56%),
+    radial-gradient(ellipse at 74% 68%, rgba(196, 214, 210, 0.45) 0%, transparent 62%),
+    linear-gradient(180deg, #e3e2da 0%, #cfd5cf 54%, #b5c0bc 100%);
+  --op-godray-a: linear-gradient(
+    180deg,
+    rgba(255, 238, 198, 0.52) 0%,
+    rgba(246, 226, 184, 0.22) 48%,
+    rgba(230, 218, 195, 0) 100%
+  );
+  --op-godray-b: linear-gradient(
+    180deg,
+    rgba(182, 232, 236, 0.34) 0%,
+    rgba(182, 232, 236, 0.12) 52%,
+    transparent 100%
+  );
+  --op-arc-main: rgba(45, 88, 92, 0.22);
+  --op-arc-sub: rgba(74, 112, 110, 0.16);
+  --op-node-fill: #2f7d82;
+  --op-node-ring: rgba(47, 125, 130, 0.28);
+  --op-mist-a: radial-gradient(ellipse, rgba(250, 248, 238, 0.58) 0%, rgba(238, 240, 234, 0.18) 46%, transparent 72%);
+  --op-mist-b: radial-gradient(ellipse, rgba(154, 174, 170, 0.38) 0%, rgba(154, 174, 170, 0.12) 48%, transparent 74%);
+  --op-mist-c: radial-gradient(ellipse, rgba(255, 241, 212, 0.42) 0%, transparent 68%);
+  --op-ms-bg: linear-gradient(155deg, rgba(252, 250, 242, 0.82) 0%, rgba(232, 236, 230, 0.62) 100%);
+  --op-ms-border: rgba(68, 98, 96, 0.24);
+  --op-ms-shadow: 0 18px 36px rgba(24, 38, 40, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  --op-ms-ink: #385a5c;
+  --op-ms-seal: linear-gradient(135deg, #d89b48, #2b7a7e);
+  --op-badge-bg: rgba(31, 56, 58, 0.08);
+  --op-badge-border: rgba(43, 92, 94, 0.24);
+  --op-badge-text: #2c4c4e;
+  --op-q-color: #162224;
+  --op-q-accent: #145e63;
+  --op-a-color: #2f4648;
+  --op-a-highlight: #0d6b70;
+  --op-a-highlight-bg: linear-gradient(90deg, rgba(24, 138, 144, 0.15), rgba(218, 162, 74, 0.16));
+  --op-thread-stroke: #18868c;
+  --op-spark-core: #126e75;
+  --op-spark-halo: rgba(34, 168, 178, 0.34);
+  --op-ground-line: linear-gradient(90deg, #4b6461 0%, #6c807c 15%, #6c807c 88%, transparent 100%);
+  --op-ground-floor: linear-gradient(180deg, rgba(28, 44, 42, 0.16), transparent);
+  --op-bokeh-bg: radial-gradient(circle, rgba(255, 248, 224, 0.68) 0%, rgba(206, 236, 238, 0.22) 48%, transparent 72%);
+  --op-vignette-bg: radial-gradient(ellipse at 50% 46%, transparent 52%, rgba(20, 32, 34, 0.34) 100%);
+  --op-dust-fill: rgba(244, 242, 232, 0.85);
+  --op-dust-spark: #d99b43;
+}
+
+/* ── 色调 2：暮色星图原野（dusk） ── */
+.op-theme-dusk {
+  --op-sheet-bg:
+    radial-gradient(ellipse at 34% 24%, rgba(36, 86, 108, 0.52) 0%, transparent 58%),
+    radial-gradient(ellipse at 72% 66%, rgba(28, 64, 82, 0.46) 0%, transparent 64%),
+    linear-gradient(180deg, #13222c 0%, #182b36 56%, #0f1c24 100%);
+  --op-godray-a: linear-gradient(
+    180deg,
+    rgba(110, 218, 238, 0.28) 0%,
+    rgba(72, 168, 196, 0.11) 50%,
+    transparent 100%
+  );
+  --op-godray-b: linear-gradient(
+    180deg,
+    rgba(242, 198, 122, 0.2) 0%,
+    rgba(242, 198, 122, 0.06) 52%,
+    transparent 100%
+  );
+  --op-arc-main: rgba(120, 222, 236, 0.26);
+  --op-arc-sub: rgba(240, 196, 120, 0.16);
+  --op-node-fill: #78deec;
+  --op-node-ring: rgba(120, 222, 236, 0.32);
+  --op-mist-a: radial-gradient(ellipse, rgba(64, 138, 162, 0.26) 0%, rgba(32, 78, 96, 0.1) 48%, transparent 72%);
+  --op-mist-b: radial-gradient(ellipse, rgba(22, 48, 62, 0.46) 0%, transparent 72%);
+  --op-mist-c: radial-gradient(ellipse, rgba(216, 174, 104, 0.16) 0%, transparent 68%);
+  --op-ms-bg: linear-gradient(155deg, rgba(26, 48, 62, 0.78) 0%, rgba(16, 32, 42, 0.64) 100%);
+  --op-ms-border: rgba(120, 222, 236, 0.3);
+  --op-ms-shadow: 0 18px 38px rgba(3, 9, 14, 0.42), inset 0 1px 0 rgba(164, 236, 248, 0.22);
+  --op-ms-ink: #8ad8e6;
+  --op-ms-seal: linear-gradient(135deg, #f4c36d, #56cfe1);
+  --op-badge-bg: rgba(120, 222, 236, 0.1);
+  --op-badge-border: rgba(120, 222, 236, 0.32);
+  --op-badge-text: #9ce4f0;
+  --op-q-color: #eef7f9;
+  --op-q-accent: #78deec;
+  --op-a-color: #b8d4dc;
+  --op-a-highlight: #ffd480;
+  --op-a-highlight-bg: linear-gradient(90deg, rgba(120, 222, 236, 0.18), rgba(255, 212, 128, 0.2));
+  --op-thread-stroke: #78deec;
+  --op-spark-core: #ffd98e;
+  --op-spark-halo: rgba(120, 222, 236, 0.42);
+  --op-ground-line: linear-gradient(90deg, #3c6e7a 0%, #62a8b8 18%, #62a8b8 88%, transparent 100%);
+  --op-ground-floor: linear-gradient(180deg, rgba(6, 14, 18, 0.52), transparent);
+  --op-bokeh-bg: radial-gradient(circle, rgba(146, 234, 248, 0.45) 0%, rgba(255, 212, 128, 0.16) 48%, transparent 72%);
+  --op-vignette-bg: radial-gradient(ellipse at 50% 46%, transparent 50%, rgba(4, 10, 14, 0.56) 100%);
+  --op-dust-fill: rgba(168, 224, 236, 0.65);
+  --op-dust-spark: #ffd480;
+}
+
+.op-underlay {
+  z-index: 1;
+}
+
+.op-sheet {
+  position: absolute;
+  top: 0;
+  height: 1080px;
+  width: 3800px;
+  z-index: 5;
+  overflow: visible;
+  background: var(--op-sheet-bg);
+}
+
+/* 1. 远景体积光与星轨层 */
+.op-sky-canopy {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  pointer-events: none;
+}
+
+.op-godray {
+  position: absolute;
+  top: -220px;
+  height: 1380px;
+  pointer-events: none;
+  filter: blur(24px);
+  transform-origin: top center;
+}
+.op-godray-1 {
+  left: 240px;
+  width: 420px;
+  background: var(--op-godray-a);
+}
+.op-godray-2 {
+  left: 880px;
+  width: 520px;
+  background: var(--op-godray-b);
+}
+
+.op-astral-arcs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+}
+.op-astral-arc-main {
+  stroke: var(--op-arc-main);
+  stroke-width: 1.8;
+}
+.op-astral-arc-sub {
+  stroke: var(--op-arc-sub);
+  stroke-width: 1.2;
+}
+.op-astral-node {
+  fill: var(--op-node-fill);
+}
+.op-astral-ring {
+  stroke: var(--op-node-ring);
+  stroke-width: 1.3;
+  fill: none;
+}
+
+/* 柔雾层 */
+.op-mist {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.op-mist-a {
+  left: 80px;
+  top: 40px;
+  width: 1850px;
+  height: 840px;
+  background: var(--op-mist-a);
+}
+.op-mist-b {
+  left: 580px;
+  top: 280px;
+  width: 2000px;
+  height: 880px;
+  background: var(--op-mist-b);
+}
+.op-mist-c {
+  left: 160px;
+  top: 480px;
+  width: 1650px;
+  height: 740px;
+  background: var(--op-mist-c);
+}
+
+/* 2. 中景知识手稿切片层 */
+.op-manuscript-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.op-manuscript-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--op-ms-bg);
+  border: 1px solid var(--op-ms-border);
+  box-shadow: var(--op-ms-shadow);
+  color: var(--op-ms-ink);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform-origin: center center;
+}
+
+.op-ms-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.op-ms-seal {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background: var(--op-ms-seal);
+  opacity: 0.85;
+}
+.op-ms-bar-short {
+  height: 4px;
+  width: 42%;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.op-ms-diagram {
+  position: relative;
+  height: 38px;
+  margin: 4px 0;
+}
+.op-ms-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.55;
+}
+.op-ms-dot.a {
+  left: 14%;
+  top: 58%;
+}
+.op-ms-dot.b {
+  left: 48%;
+  top: 22%;
+}
+.op-ms-dot.c {
+  left: 78%;
+  top: 50%;
+}
+
+.op-ms-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.op-ms-lines span {
+  display: block;
+  height: 3.5px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.26;
+}
+
+/* 3. 高处流光书卷托羽 */
+.op-glyph-perch {
+  position: absolute;
+  width: 240px;
+  height: 24px;
+  pointer-events: none;
+  transform-origin: center center;
+}
+.op-perch-glow {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 2px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--op-spark-halo);
+  filter: blur(8px);
+}
+.op-perch-feather {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 10px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--op-thread-stroke) 22%,
+    var(--op-spark-core) 50%,
+    var(--op-thread-stroke) 78%,
+    transparent 100%
+  );
+}
+.op-perch-wing {
+  position: absolute;
+  top: 7px;
+  width: 18px;
+  height: 8px;
+  border-top: 1.5px solid var(--op-thread-stroke);
+  opacity: 0.65;
+}
+.op-perch-wing.left {
+  left: 28px;
+  transform: rotate(-14deg);
+}
+.op-perch-wing.right {
+  right: 28px;
+  transform: rotate(14deg);
+}
+
+/* 4. 高处同行流式叙事文案（D1:甲） */
+.op-stream-copy {
+  position: absolute;
+  width: 1280px;
+  text-align: left;
+  pointer-events: none;
+}
+
+.op-stream-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: var(--op-badge-bg);
+  border: 1px solid var(--op-badge-border);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+  color: var(--op-badge-text);
+}
+.op-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--op-node-fill);
+  box-shadow: 0 0 10px var(--op-node-fill);
+}
+.op-stream-badge i {
+  font-style: normal;
+  opacity: 0.55;
+  margin: 0 2px;
+}
+
+.op-stream-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  white-space: pre;
+}
+
+.op-stream-question {
+  font-size: 68px;
+  font-weight: 820;
+  letter-spacing: -1.6px;
+  line-height: 1.16;
+  color: var(--op-q-color);
+  margin-bottom: 12px;
+}
+
+.op-stream-answer {
+  font-size: 48px;
+  font-weight: 680;
+  letter-spacing: -0.6px;
+  line-height: 1.24;
+  color: var(--op-a-color);
+}
+
+.op-tok {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.op-tok-accent {
+  color: var(--op-q-accent);
+  font-weight: 860;
+}
+
+.op-tok-journey {
+  color: var(--op-a-highlight);
+  padding: 2px 14px 4px;
+  margin-left: 4px;
+  border-radius: 12px;
+  background: var(--op-a-highlight-bg);
+}
+
+/* 5. 流式游标与俯冲引路丝线（D3） */
+.op-guide-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+.op-guide-thread-path {
+  stroke: var(--op-thread-stroke);
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 12px var(--op-spark-halo));
+}
+.op-spark-halo {
+  fill: var(--op-spark-halo);
+}
+.op-spark-core {
+  fill: var(--op-spark-core);
+}
+
+/* 6. 地面与近景散焦光尘 */
+.op-ground {
+  position: absolute;
+  left: 0;
+  width: 3800px;
+  height: 3px;
+  background: var(--op-ground-line);
+  overflow: hidden;
+}
+.op-ground-tick {
+  position: absolute;
+  top: 0;
+  width: 36px;
+  height: 3px;
+  background: var(--op-node-fill);
+  opacity: 0.45;
+}
+.op-draw-cord {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #78deec 0%, #589795 45%, rgba(88, 151, 149, 0) 100%);
+  box-shadow: 0 0 20px rgba(120, 222, 236, 0.55);
+  pointer-events: none;
+}
+.op-stomp-wave {
+  position: absolute;
+  width: 440px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--op-thread-stroke);
+  box-shadow: 0 0 20px var(--op-spark-halo);
+  pointer-events: none;
+}
+.op-ground-floor {
+  position: absolute;
+  left: 0;
+  width: 3800px;
+  height: 130px;
+  background: var(--op-ground-floor);
+}
+
+.op-bokeh-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.op-bokeh {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: var(--op-bokeh-bg);
+  filter: blur(4px);
+}
+
+.op-world-dust {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 8;
+  pointer-events: none;
+  overflow: visible;
+}
+.op-dust-puff {
+  fill: var(--op-dust-fill);
+}
+.op-dust-spark {
+  fill: var(--op-dust-spark);
+}
+.op-stage-dust {
+  fill: var(--op-dust-fill);
+}
+
+.op-hem {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 38px;
+  background: linear-gradient(
+    90deg,
+    #eef1ec 0%,
+    #dfe3dd 14%,
+    #9aa4a0 42%,
+    #b8c0bc 72%,
+    rgba(205, 210, 205, 0) 100%
+  );
+  border-left: 2px solid #f4f6f1;
+  box-shadow:
+    inset 3px 0 8px rgba(255, 255, 255, 0.65),
+    12px 0 28px rgba(34, 44, 42, 0.18);
+}
+
+.op-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--op-vignette-bg);
+}
+
+.op-stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1856px;
+  height: 1280px;
+  z-index: 10;
+  transform-origin: 0 0;
+}
