@@ -1,0 +1,106 @@
+.qs {
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at 62% 38%,
+    #14252b 0%,
+    #0c1519 52%,
+    #060a0c 100%
+  );
+  font-family: "Noto Sans SC", sans-serif;
+}
+.qs-region-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.qs-chunk {
+  position: absolute;
+  height: 15px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(206, 233, 240, 0.3),
+    rgba(206, 233, 240, 0.58)
+  );
+}
+.qs-chunk-lit {
+  background: linear-gradient(
+    90deg,
+    rgba(160, 233, 245, 0.85),
+    rgba(220, 250, 255, 0.95)
+  );
+  box-shadow: 0 0 22px rgba(150, 225, 240, 0.55);
+}
+.qs-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(126, 213, 228, 0.9);
+  pointer-events: none;
+}
+.qs-graph-edge {
+  stroke: rgba(166, 216, 152, 0.28);
+  stroke-width: 2;
+  fill: none;
+}
+.qs-graph-edge-lit {
+  stroke: rgba(190, 235, 168, 0.9);
+  stroke-width: 2.6;
+  filter: drop-shadow(0 0 8px rgba(166, 216, 152, 0.6));
+}
+.qs-graph-node {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 36% 30%,
+    rgba(198, 235, 175, 0.95),
+    rgba(96, 148, 82, 0.9)
+  );
+  border: 1px solid rgba(214, 242, 202, 0.6);
+  box-shadow: 0 0 18px rgba(166, 216, 152, 0.35);
+}
+.qs-page {
+  position: absolute;
+  border-radius: 16px;
+  background: linear-gradient(
+    150deg,
+    rgba(228, 214, 250, 0.2),
+    rgba(150, 120, 200, 0.14)
+  );
+  border: 1px solid rgba(228, 214, 250, 0.4);
+  overflow: hidden;
+}
+.qs-page-line {
+  position: absolute;
+  left: 18px;
+  height: 9px;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(228, 214, 250, 0.5),
+    rgba(228, 214, 250, 0.82)
+  );
+}
+.qs-probe {
+  position: absolute;
+  z-index: 20;
+  border-radius: 10px;
+}
+.qs-probe-glow {
+  position: absolute;
+  inset: -14px;
+  border-radius: 22px;
+}
+.qs-hud {
+  position: absolute;
+  z-index: 22;
+  font-family: "Manrope Variable", sans-serif;
+  font-size: 17px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+.qs-trail {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  overflow: visible;
+}
