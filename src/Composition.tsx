@@ -16,9 +16,48 @@ import { RetrievalContinuum } from "./RetrievalContinuum";
 import { MindVoyage } from "./MindVoyage";
 import { Opening } from "./Opening";
 import { OPENING_DURATION } from "./opening-motion";
+import { PaperFrontierGraybox } from "./paper-frontier/opening/Graybox";
+import {
+  PaperPosterFall,
+  PaperPosterLedge,
+  PaperPosterMount,
+  PaperPosterThreshold,
+} from "./paper-frontier/opening/Posters";
 
 export const ProjectCompositions = () => (
   <>
+    <Composition
+      id="PaperFrontierGraybox"
+      component={PaperFrontierGraybox}
+      width={1920}
+      height={1080}
+      fps={60}
+      durationInFrames={360}
+    />
+    <Still
+      id="PaperPoster01Ledge"
+      component={PaperPosterLedge}
+      width={1920}
+      height={1080}
+    />
+    <Still
+      id="PaperPoster02Fall"
+      component={PaperPosterFall}
+      width={1920}
+      height={1080}
+    />
+    <Still
+      id="PaperPoster03Mount"
+      component={PaperPosterMount}
+      width={1920}
+      height={1080}
+    />
+    <Still
+      id="PaperPoster04Threshold"
+      component={PaperPosterThreshold}
+      width={1920}
+      height={1080}
+    />
     <Composition
       id="TitleOpening"
       component={Opening}
